@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="user-login.component.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="info">
+        <p class="txt-1">Gracias por visitarnos</p>
+        <h2>Bienvenido a MobileMaster</h2>
+        <hr />
+      </div>
+
+      <form (ngSubmit)="userLogin()" class="form">
+        <h2>LOGIN</h2>
+        <p>
+          Por favor, ingrese sus credenciales para acceder a la plataforma de MobileMaster
+        </p>
+        <div class="inputs">
+          <input type="text" [(ngModel)]="user.userId" class="box" id="userId" name="userId" placeholder="Ingrese usuario">
+          <input type="password" [(ngModel)]="user.password" class="box" id="password" name="password" placeholder="Ingrese contraseña">
+          <input type="submit" value="Login" class="submit">
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
