@@ -1,0 +1,31 @@
+<div class="card-header">
+    <h3>Reporte de Pedidos</h3>
+  </div>
+  <br>
+  <button (click)="nuevoPedido()" class="btn btn-warning">Agregar</button>
+  <br> <br>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Fecha pedido</th>
+        <th>Nombre Cliente</th>
+        <th>Cantidad Productos</th>
+        <th>Importe</th>
+       <!--  <th>Acciones</th> -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pedido of listPedidos">
+        <td>{{pedido.idPedido}}</td>
+        <td>{{pedido.fechaPedido}}</td>
+        <td>{{pedido.cliente.nombres + " "+ pedido.cliente.apePaterno}}</td>
+        <td>{{pedido.pedidoDetalleDTO.length}}</td>
+        <td>{{pedido.importeVta}}</td>
+        <td>
+ <!--          <button (click)="editarPedido(pedido)" class="btn btn-primary">Editar</button>&nbsp;  
+          <button (click)="eliminarPedido(pedido)" class="btn btn-danger">Eliminar</button> -->
+        </td>
+      </tr>
+    </tbody>
+  </table>
