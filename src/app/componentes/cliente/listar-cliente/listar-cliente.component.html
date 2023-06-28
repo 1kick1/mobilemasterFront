@@ -1,0 +1,32 @@
+<div class="card-header">
+    <h3>Listado de Clientes</h3>
+  </div>
+  <br>
+  <button (click)="nuevo()" class="btn btn-warning">Agregar</button>
+  <br> <br>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombres</th>
+        <th>Apellidos</th>
+        <th>DNI</th>
+        <th>Fecha de Ingreso</th>
+        <th>Correo</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cliente of clientes">
+        <td>{{cliente.idCliente}}</td>
+        <td>{{cliente.nombres}}</td>
+        <td>{{cliente.apePaterno + " " +cliente.apeMaterno}}</td>
+        <td>{{cliente.dni}}</td>
+        <td>{{cliente.fechaIngreso}}</td>
+        <td>{{cliente.email}}</td>
+        <td>
+          <button (click)="editar(cliente)" class="btn btn-primary">Editar</button>&nbsp;  
+          <button (click)="eliminar(cliente)" class="btn btn-danger">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
